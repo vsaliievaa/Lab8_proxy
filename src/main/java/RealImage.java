@@ -1,5 +1,9 @@
+import lombok.Getter;
+import lombok.Setter;
+
 public class RealImage implements Image {
 
+    @Getter
     private final String filename;
 
     public RealImage(String filename) {
