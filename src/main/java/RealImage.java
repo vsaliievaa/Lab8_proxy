@@ -1,5 +1,7 @@
 import lombok.Getter;
-import lombok.Setter;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class RealImage implements Image {
 
@@ -12,6 +14,14 @@ public class RealImage implements Image {
 
     public void display() {
         System.out.println("Displaying image from file " + this.filename + ".");
+
+        JFrame frame = new JFrame();
+        ImageIcon icon = new ImageIcon(filename);
+        JLabel label = new JLabel(icon);
+        frame.add(label);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     public void loadFromDisk() {
